@@ -1,0 +1,13 @@
+{
+  "name": "sit-para-ti",
+  "version": "1.0.0",
+  "description": "Una página especial con corazones animados y karaoke",
+  "main": "Parati😊.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve ."
+  },
+  "keywords": ["html", "css", "javascript", "canvas", "karaoke"],
+  "author": "Elmer",
+  "license": "MIT"
+}

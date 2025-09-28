@@ -3,8 +3,25 @@ const lyricsContainer = document.getElementById("lyrics");
 const playBtn = document.getElementById("playBtn");
 
 let currentLine = -1;
+let audioReady = false;
+
+// Precargar el audio cuando la página carga
+audio.addEventListener("canplaythrough", () => {
+  audioReady = true;
+  playBtn.textContent = "▶ Reproducir";
+});
+
+// Mostrar estado de carga
+audio.addEventListener("loadstart", () => {
+  playBtn.textContent = "⏳ Cargando...";
+});
 
 playBtn.addEventListener("click", () => {
+  if (!audioReady) {
+    playBtn.textContent = "⏳ Cargando...";
+    return;
+  }
+  
   if (audio.paused) {
     audio.play();
     playBtn.textContent = "⏸ Pausar";
